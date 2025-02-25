@@ -18,5 +18,5 @@ jobs:
           webhookUrl: '${{ secrets.GOOGLE_CHAT_WEBHOOK_URL }}'
           jobStatus: ${{ job.status }}
           title: 測試repo更新
-          subtitle: ${{ github.event.pull-request.title }}
-          additionalSections: '[{"header":"更新內容","collapsible":true,"widgets": [{"decoratedText": {"startIcon": {"knownIcon": "DESCRIPTION"},"text": "${{ github.event.pull-request.body }}"}}]}]'
+          subtitle: ${{ github.event.pull_request.title }}
+          additionalSections: '[{"header":"更新內容","collapsible":true,"widgets": [{"decoratedText": {"startIcon": {"knownIcon": "DESCRIPTION"},"text": "${{ github.event.pull_request.body }}"}}]}]'
