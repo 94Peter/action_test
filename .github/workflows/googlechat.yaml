@@ -1,9 +1,8 @@
 name: Send Message to Google Chat
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types: [opened]
 jobs:
   google-chat-action:
     name: Google Chat GitHub Action
@@ -17,4 +16,4 @@ jobs:
           webhookUrl: '${{ secrets.GOOGLE_CHAT_WEBHOOK_URL }}'
           jobStatus: ${{ job.status }}
           title: 測試repo更新
-          additionalSections: '[{"header":"更新內容","collapsible":true,"widgets": [{"decoratedText": {"startIcon": {"knownIcon": "DESCRIPTION"},"text": "{${{ github.event.head_commit.message }}}"}}]}]'
+          additionalSections: '[{"header":"更新內容","collapsible":true,"widgets": [{"decoratedText": {"startIcon": {"knownIcon": "DESCRIPTION"},"text": "${{ github.event.head_commit.message }}"}}]}]'
